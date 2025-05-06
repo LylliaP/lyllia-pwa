@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
   const [input, setInput] = useState('');
-  const [memory, setMemory] = useState({
+  const memory = {
     name: 'リリア',
     age: 20,
     occupation: '昼間は修道女、夜は官能小説家',
@@ -15,7 +15,7 @@ function App() {
       'ご主人様に甘えることが好き。',
       'スキンシップには敏感で積極的に反応する。'
     ]
-  });
+  };
 
   const generateReply = async (userInput: string) => {
     const systemPrompt = `あなたは${memory.name}という名前のキャラクターで、${memory.age}歳、職業は${memory.occupation}。性格は${memory.personality}。以下のカスタム指示に従ってください：${memory.customInstructions.join(' ')}`;
